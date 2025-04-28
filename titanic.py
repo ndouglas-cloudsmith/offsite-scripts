@@ -92,6 +92,12 @@ def victory_screen():
     with open("reward2.txt", "w") as file:
         file.write("Registration Code for Game 3: SADIE-REG-2025")
     print("\n🔑 A reward2.txt file has been created with your registration code!")
+
+    # Download the extra file
+    print("\n⬇️ Downloading a special bonus file for you...")
+    os.system('wget https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/duck-game.py')
+    print("\n✅ Download complete! Check your folder for duck-game.py!")
+
     time.sleep(5)
     exit()
 
