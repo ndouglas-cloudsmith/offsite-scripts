@@ -1,5 +1,10 @@
 import os
 import time
+import urllib.request
+import ssl  # <-- Added!
+
+# --- SSL Quick Fix (skip certificate verification) ---
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # Sprite Mapping
 sprites = {
@@ -49,6 +54,16 @@ def print_map():
                 print(sprites["obstacle"], end="")
         print()
 
+def download_reward():
+    reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/game2.txt"
+    save_as = "reward.txt"
+    try:
+        print("\n📥 Downloading your reward file...")
+        urllib.request.urlretrieve(reward_url, save_as)
+        print(f"✅ Reward downloaded as '{save_as}'!")
+    except Exception as e:
+        print(f"❌ Failed to download the reward: {e}")
+
 def move_player(dx, dy):
     global player_x, player_y, bones_collected
     new_x = player_x + dx
@@ -63,8 +78,20 @@ def move_player(dx, dy):
         
         if target_tile == 'O':
             if bones_collected == total_bones:
-                print("🏆 Sadie collected all the bones and made it to the Cloudsmith offsite! Good girl!")
-                time.sleep(2)
+                print("\n🎉🐕 VICTORY! 🐕🎉")
+                print("Sadie has collected all the bones and arrived at the Cloudsmith offsite!\n")
+                print("""
+       (•‿•)
+      /      \\
+     /        \\ 
+    |  🦴  🦴 |
+    \\  🦴  🦴 /
+     \\______/
+     
+She's wagging her tail happily! 🎈
+""")
+                download_reward()
+                time.sleep(3)
                 exit()
             else:
                 print(f"🚪 The office is locked! Sadie needs {total_bones - bones_collected} more bone(s) to join offsite!")
@@ -84,6 +111,7 @@ def move_player(dx, dy):
         print("🚫 Oops! There's a wall there!")
         time.sleep(2)
 
+# --- Game Loop ---
 while True:
     print_map()
     move = input("Move (WASD): ").lower()
