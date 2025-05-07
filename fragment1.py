@@ -17,7 +17,7 @@ def download_reward():
         print(f"❌ Failed to download the reward: {e}")
 
 def password_protected():
-    print("🚪 To access the second fragment, you need to provide the hidden description of the artifact found at midnight.")
+    print("🚪 To access the first fragment, you need to provide the hidden description of the artifact found at midnight.")
     user_input = getpass.getpass("Password: ")
     if user_input == PASSWORD:
         print("✅ Access granted!")
