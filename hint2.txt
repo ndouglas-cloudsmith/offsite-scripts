@@ -1,2 +1,0 @@
-You can also inspect with xxd or hexdump to find the flag:
-xxd -s 400 -l 32 bark-of-the-beast.bin
