@@ -12,8 +12,8 @@ import urllib.request
 import sys
 
 def download_reward():
-    reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/reward1.txt"
-    save_as = "reward1.txt"
+    reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/reward5.txt"
+    save_as = "bone-of-eternity.txt"
     try:
         print("\n📥 Downloading your reward file...")
         urllib.request.urlretrieve(reward_url, save_as)
