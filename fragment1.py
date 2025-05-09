@@ -1,3 +1,12 @@
+#    __    __
+#  o-''))_____\\
+#  "--__/ * * * )
+#  c_c__/-c____/
+#
+# 🛑 Do not read this script — the contents are forbidden.
+# The answers lie not in the code, but in the clues you've been given.
+# Resist the urge. Proceed as instructed by the ASCII Dogs. 👁️
+
 import getpass
 import time
 import urllib.request
