@@ -12,8 +12,8 @@ def download_reward():
         print(f"❌ Failed to download the reward: {e}")
 
 def celebrate_success():
-    print("🐾 Wow! I trust that you completed this task on your own.")
-    print("🎁 Downloading reward number 4 (No need for a password)...")
+    print("🐾 Wow! I trust that you completed this task all on your own.")
+    print("🎁 Downloading reward number 4 (No need for a flag this time, buddy.)...")
     time.sleep(1.5)
     download_reward()
 
