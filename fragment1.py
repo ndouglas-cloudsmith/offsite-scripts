@@ -13,7 +13,7 @@ import urllib.request
 import sys
 
 # --- Password Protection ---
-PASSWORD = "flag-kqE7a0Mr5Yld"
+PASSWORD = "flag-OiDencIMAmoD"
 
 def download_reward():
     reward_url = "https://raw.githubusercontent.com/ndouglas-cloudsmith/offsite-scripts/refs/heads/main/reward1.txt"
